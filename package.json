@@ -1,0 +1,33 @@
+{
+  "name": "kocaeli_ulasim",
+  "version": "1.0.0",
+  "description": "Neo4j ile graf tabanlı şehir içi ulaşım projesi",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "neo4j",
+    "express",
+    "graph-database",
+    "transportation"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@turf/turf": "^7.2.0",
+    "axios": "^1.9.0",
+    "cors": "^2.8.5",
+    "csv-parser": "^3.2.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "neo4j-driver": "^5.12.0",
+    "react-select": "^5.10.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

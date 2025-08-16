@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+.home-page {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  margin-top: -80px;
+
+  .hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://yoldakiler.com/wp-content/uploads/2023/09/Kocaeli-Gezilecek-Yerler-Kocaeli-Turistik-Yerler.webp');
+    background-size: cover;
+    background-position: center bottom;
+    color: white;
+    text-align: center;
+    min-height: 100vh;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+    h1 {
+      font-size: 4.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      line-height: 1.2;
+    }
+
+    p {
+      font-size: 1.3rem;
+      margin-bottom: 40px;
+      max-width: 600px;
+    }
+
+    .search-form {
+      display: flex;
+      width: 100%;
+      max-width: 600px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 50px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      padding: 10px;
+      backdrop-filter: blur(5px);
+
+      input {
+        flex-grow: 1;
+        border: none;
+        outline: none;
+        font-size: 1.1rem;
+        padding: 10px 20px;
+        background: transparent;
+        color: #333;
+      }
+
+      button {
+        background-color: #1e40af;
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        border-radius: 50px;
+        cursor: pointer;
+        font-size: 1.1rem;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #1e3a8a;
+        }
+      }
+    }
+  }
+
+  .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+  }
+
+  .search-section {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+
+    .search-form {
+      display: flex;
+      max-width: 700px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 50px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      padding: 10px;
+      align-items: center;
+
+      .search-icon {
+          font-size: 1.5rem;
+          color: #6c757d;
+          margin: 0 15px;
+      }
+
+      input {
+        flex-grow: 1;
+        border: none;
+        outline: none;
+        font-size: 1.1rem;
+        padding: 10px;
+      }
+
+      button {
+        background-color: #1e40af;
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        border-radius: 50px;
+        cursor: pointer;
+        font-size: 1.1rem;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #1e3a8a;
+        }
+      }
+    }
+  }
+
+  .features-section {
+    padding: 80px 20px;
+    background-color: #f8f9fa;
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 2.5rem;
+      font-weight: 600;
+    }
+
+    .feature-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      text-align: center;
+
+      .feature-card {
+        background: white;
+        padding: 40px 30px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-icon {
+          font-size: 3.5rem;
+          color: #1e40af;
+          margin-bottom: 20px;
+          background-color: #e9eef8;
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        h3 {
+          font-size: 1.5rem;
+          font-weight: 600;
+          margin-bottom: 15px;
+        }
+
+        p {
+          font-size: 1rem;
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+} 

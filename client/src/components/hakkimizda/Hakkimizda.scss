@@ -1,0 +1,165 @@
+.hakkimizda-page {
+  padding: 0 0 2.5rem;
+  background-color: #f8f9fa;
+
+  .page-header {
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e9ecef;
+
+    .university-logo {
+      max-width: 130px;
+      height: auto;
+      margin-bottom: 2rem;
+    }
+
+    .university-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: #212529;
+    }
+    .faculty-info {
+      font-size: 1.1rem;
+      color: #212529;
+      font-weight: 500;
+      margin-bottom: 0.1rem;
+      line-height: 1.6;
+    }
+    .thesis-info {
+      font-size: 1rem;
+      font-style: normal;
+      color: #212529;
+      font-weight: 500;
+      margin-top: 0.75rem;
+    }
+  }
+
+  .project-summary-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+    background-color: #ffffff;
+
+    .card-title {
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .section-title {
+    font-weight: 600;
+    position: relative;
+    margin-bottom: 3rem !important;
+    padding-bottom: 1rem;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background-color: #0d6efd;
+      border-radius: 2px;
+    }
+  }
+
+  .student-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 2rem 1.5rem;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .student-avatar {
+      width: 120px;
+      height: 120px;
+      margin: -70px auto 20px;
+      border: 5px solid #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .student-avatar-placeholder {
+        width: 120px;
+        height: 120px;
+        margin: -70px auto 20px;
+        border: 5px solid #fff;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        background: #e9ecef;
+        color: #6c757d;
+        border-radius: 50%;
+        padding: 20px;
+    }
+
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .contact-info {
+      text-align: left;
+      margin-top: 1.5rem;
+      font-size: 0.95rem;
+      
+      p {
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+      }
+
+      .me-2 {
+          margin-right: 0.75rem !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .hakkimizda-page {
+    padding: 1.5rem 0;
+
+    .page-header {
+      .university-logo {
+        max-width: 100px;
+        margin-bottom: 1.5rem;
+      }
+      .university-title {
+        font-size: 2rem;
+      }
+      .faculty-info {
+        font-size: 1rem;
+      }
+      .thesis-info {
+        font-size: 0.9rem;
+      }
+    }
+
+    .project-summary-card {
+      padding: 1.5rem;
+      .card-title {
+        font-size: 1.5rem;
+      }
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+    }
+
+    .student-card {
+      .student-avatar, .student-avatar-placeholder {
+        width: 100px;
+        height: 100px;
+        margin-top: -60px;
+      }
+    }
+  }
+} 

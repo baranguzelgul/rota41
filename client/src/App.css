@@ -1,0 +1,494 @@
+/* Genel Stil */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+  padding-top: 70px; /* Add padding for fixed navbar */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+/* Main Content */
+.main-content {
+  margin-top: 1rem;
+}
+
+/* Header Stil */
+.navbar {
+  /* Styles moved to Header.scss */
+}
+
+.navbar-brand {
+  /* Styles moved to Header.scss */
+}
+
+.nav-link {
+  /* Styles moved to Header.scss */
+}
+
+.nav-link.active {
+  /* Styles moved to Header.scss */
+}
+
+/* Kart Stil */
+.card {
+  margin-bottom: 20px;
+  border: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-header {
+  font-weight: bold;
+  background-color: #f8f9fa;
+}
+
+/* Buton Stil */
+.btn-primary {
+  background-color: #0066cc;
+  border-color: #0066cc;
+}
+
+.btn-outline-primary {
+  color: #0066cc;
+  border-color: #0066cc;
+}
+
+/* Harita Stil */
+.leaflet-container {
+  height: 500px;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Arama Kutusu */
+.search-box {
+  margin-bottom: 20px;
+}
+
+/* Hat Liste Sayfası Stil */
+.bg-light {
+  background-color: #f0f7ff !important;
+}
+
+.search-panel {
+  border-radius: 10px;
+  border: none;
+  background-color: white;
+}
+
+.form-control-lg {
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 1rem;
+  border: 1px solid #dee2e6;
+}
+
+.form-control-lg:focus {
+  box-shadow: 0 0 0 0.25rem rgba(0, 102, 204, 0.25);
+  border-color: #0066cc;
+}
+
+.hover-bg:hover {
+  background-color: #f0f7ff;
+}
+
+.hat-card {
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.hat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.hat-card .card-header {
+  padding: 15px;
+  text-align: center;
+}
+
+.hat-card .btn-primary {
+  border-radius: 20px;
+  padding: 5px 15px;
+}
+
+/* Durak ve Hat Listesi */
+.list-group-item {
+  border-left: 4px solid #0066cc;
+  margin-bottom: 5px;
+  transition: background-color 0.2s ease;
+}
+
+.list-group-item:hover {
+  background-color: #f0f7ff;
+}
+
+/* Rota Planlama */
+.route-form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+/* Yükleme Animasyonu */
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+/* Route Planner Styles */
+.route-planner-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.page-title {
+  font-weight: 600;
+  color: #333;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 10px;
+}
+
+.route-planner-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .route-planner-layout {
+    grid-template-columns: 350px 1fr;
+  }
+}
+
+.route-form-panel {
+  height: fit-content;
+}
+
+.form-section-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.input-with-icon {
+  position: relative;
+}
+
+.map-select-btn {
+  font-size: 0.85rem;
+  padding: 4px 10px;
+}
+
+.search-results {
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.search-result-item {
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border-bottom: 1px solid #eee;
+}
+
+.search-result-item:last-child {
+  border-bottom: none;
+}
+
+.search-result-item:hover {
+  background-color: #f5f5f5;
+}
+
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.route-options-container {
+  margin-top: 20px;
+}
+
+.route-option-card {
+  border: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.route-option-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  transform: translateY(-2px);
+}
+
+.route-option-card.selected {
+  border-left: 4px solid #0d6efd;
+}
+
+.route-option-header {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.route-option-header.selected {
+  background-color: #f8f9ff;
+}
+
+.route-letter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #0d6efd;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.route-summary {
+  flex-grow: 1;
+}
+
+.route-name {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.fastest-badge {
+  font-size: 0.7rem;
+  padding: 3px 6px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.route-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.total-time {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.route-steps {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.walk-step {
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #666;
+  gap: 4px;
+}
+
+.bus-step {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 8px;
+  border-radius: 4px;
+  color: white;
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+.route-arrival {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-left: 15px;
+}
+
+.arrival-time {
+  font-weight: 600;
+  color: #0d6efd;
+  font-size: 1.1rem;
+}
+
+.route-details-body {
+  padding: 15px;
+  background-color: #f8f9ff;
+}
+
+.route-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.stat-item i {
+  font-size: 1.5rem;
+  color: #0d6efd;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.stat-value {
+  font-weight: 600;
+  color: #333;
+}
+
+.map-panel {
+  height: fit-content;
+}
+
+.map-header {
+  background-color: #f8f9ff;
+  border-bottom: 1px solid #eee;
+}
+
+.route-map {
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+}
+
+/* Custom markers */
+.marker-start {
+  background-color: #3388ff;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+  width: 14px;
+  height: 14px;
+}
+
+.marker-end {
+  background-color: #ff3333;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+  width: 14px;
+  height: 14px;
+}
+
+.stop-marker {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid #333;
+  background-color: #fff;
+}
+
+.stop-marker.start {
+  background-color: green;
+  border-color: #fff;
+}
+
+.stop-marker.end {
+  background-color: red;
+  border-color: #fff;
+}
+
+.stop-marker.transfer {
+  background-color: #ffc107;
+  border-color: #fff;
+}
+
+/* Timeline styling for route details */
+.timeline {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 12px;
+  width: 2px;
+  background-color: #ddd;
+  z-index: 0;
+}
+
+.timeline > div {
+  position: relative;
+  margin-bottom: 15px;
+  padding-left: 40px;
+}
+
+.timeline > div:last-child {
+  margin-bottom: 0;
+}
+
+.timeline .walking-icon,
+.timeline .bus-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .route-option-header {
+    flex-wrap: wrap;
+  }
+  
+  .route-arrival {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding-top: 80px; /* Header yüksekliğine göre ayarlayın */
+}

@@ -1,0 +1,884 @@
+// Modern Hat Detay sayfası için SCSS dosyası
+
+// Değişkenler
+:root {
+  --primary-color: #1e40af; // Navbar ile uyumlu ana renk
+  --primary-color-hover: #1c389a;
+  --light-gray-bg: #f8f9fa;
+  --border-color: #dee2e6;
+  --text-color: #212529;
+  --text-muted-color: #6c757d;
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --card-radius: 12px;
+}
+
+// Mobil responsive kesme noktaları
+$mobile: 576px;
+$tablet: 768px;
+$desktop: 992px;
+
+// Ana konteyner stili
+.hat-detay-container {
+  padding: 0 1.5rem 0.5rem;
+  position: relative;
+  top: -64px; /* ~80px olan boşluğu ~16px'e düşürmek için */
+  margin-bottom: -64px; /* Footer'ın yukarı kaymasını engellemek için */
+  background-color: var(--light-gray-bg);
+  min-height: calc(100vh - 70px); // Header yüksekliğini çıkar
+  border-radius: var(--card-radius);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+// Hat başlık kısmı
+.hat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  background-color: white;
+  border-radius: var(--card-radius);
+  padding: 1.25rem;
+  box-shadow: var(--card-shadow);
+  
+  @media (max-width: $tablet) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .hat-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .hat-number {
+      padding: 0.5rem 1rem;
+      border-radius: var(--card-radius);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+      background-color: var(--primary-color);
+      flex-shrink: 0;
+    }
+    
+    .hat-name {
+      margin: 0;
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--text-color);
+    }
+  }
+  
+  .back-button {
+    border-radius: 30px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    transition: all 0.2s ease;
+    
+    @media (max-width: $tablet) {
+      margin-top: 1rem;
+      align-self: flex-start;
+    }
+    
+    &:hover {
+      background-color: var(--primary-color);
+      color: white;
+    }
+  }
+}
+
+// Arama kutusu
+.search-container {
+  position: relative;
+  margin-bottom: 2rem;
+  
+  .search-box {
+    position: relative;
+    
+    .search-icon {
+      position: absolute;
+      left: 0.8rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted-color);
+      z-index: 3;
+    }
+    
+    .search-input {
+      padding: 0.75rem 1rem 0.75rem 2.5rem;
+      border-radius: var(--card-radius);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--card-shadow);
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      
+      &:focus {
+        box-shadow: 0 0 0 0.25rem rgba(30, 64, 175, 0.25);
+        border-color: var(--primary-color);
+      }
+    }
+  }
+  
+  .search-results {
+    position: absolute;
+    width: 100%;
+    background-color: white;
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1000;
+    margin-top: 0.25rem;
+    
+    .search-result-item {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      transition: background-color 0.2s ease;
+      
+      &:last-child {
+        border-bottom: none;
+      }
+      
+      &:hover {
+        background-color: rgba(30, 64, 175, 0.1);
+      }
+      
+      .route-badge {
+        padding: 0.25rem 0.75rem;
+        border-radius: var(--card-radius);
+        font-weight: bold;
+        margin-right: 0.75rem;
+        min-width: 40px;
+        text-align: center;
+      }
+      
+      .route-name {
+        flex-grow: 1;
+      }
+      
+      .route-direction {
+        color: var(--text-muted-color);
+        font-size: 0.9rem;
+        margin-left: 0.5rem;
+      }
+    }
+  }
+}
+
+// Tab içerikleri
+.content-tabs {
+  background-color: white;
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  padding: 1.5rem;
+  
+  // Modern tab stilleri
+  .modern-tabs {
+    border-bottom: 2px solid var(--border-color);
+    margin-bottom: 1.5rem;
+    
+    .nav-link {
+      color: var(--text-muted-color);
+      font-weight: 600;
+      border: none;
+      border-bottom: 2px solid transparent;
+      padding: 0.75rem 1rem;
+      border-radius: 0;
+      margin-right: 1rem;
+      position: relative;
+      transition: all 0.2s ease;
+      
+      i {
+        margin-right: 0.5rem;
+      }
+      
+      &:hover {
+        color: var(--primary-color);
+      }
+      
+      &.active {
+        color: var(--primary-color);
+        background-color: transparent;
+        border-bottom-color: var(--primary-color);
+      }
+    }
+  }
+  
+  // Kart stilleri
+  .card {
+    border: none;
+    border-radius: var(--card-radius);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    
+    .card-header {
+      background-color: white;
+      border-bottom: 1px solid #eee;
+      padding: 1rem;
+      
+      .nav-tabs {
+        border: none;
+        
+        .nav-link {
+          border: none;
+          border-radius: var(--card-radius);
+          padding: 0.5rem 1rem;
+          color: var(--text-muted-color);
+          
+          &.active {
+            background-color: var(--primary-color);
+            color: white;
+          }
+        }
+      }
+    }
+    
+    .card-body {
+      padding: 1.5rem;
+    }
+  }
+  
+  // Özel tablo stilleri
+  .schedule-table {
+    border-radius: var(--card-radius);
+    overflow: hidden;
+    
+    thead {
+      background-color: white;
+      
+      th {
+        color: var(--text-color);
+        font-weight: 600;
+        border: none;
+      }
+    }
+    
+    tbody {
+      tr {
+        &:nth-child(odd) {
+          background-color: rgba(var(--light-gray-bg), 0.5);
+        }
+        
+        &:hover {
+          background-color: rgba(var(--primary-color), 0.05);
+        }
+        
+        td {
+          vertical-align: middle;
+          padding: 0.75rem;
+        }
+      }
+    }
+  }
+  
+  // Güzergah listesi
+  .durak-list {
+    border-radius: var(--card-radius);
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    
+    .list-group-item {
+      border-left: none;
+      border-right: none;
+      padding: 0.75rem 1rem;
+      
+      &:first-child {
+        border-top: none;
+      }
+      
+      &:last-child {
+        border-bottom: none;
+      }
+      
+      &.bg-primary {
+        background-color: var(--primary-color) !important;
+      }
+      
+      .route-circle {
+        background-color: var(--primary-color);
+        color: white;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 0.8rem;
+      }
+    }
+  }
+  
+  // Harita konteyner
+  .map-container {
+    border-radius: var(--card-radius);
+    overflow: hidden;
+    
+    .leaflet-container {
+      border-radius: var(--card-radius);
+    }
+  }
+  
+  // Veri yok mesajı
+  .no-data-card {
+    text-align: center;
+    padding: 3rem 0;
+    
+    .no-data-message {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
+      i {
+        font-size: 3rem;
+        color: var(--text-muted-color);
+        margin-bottom: 1rem;
+      }
+      
+      p {
+        font-size: 1.2rem;
+        color: var(--text-muted-color);
+      }
+    }
+  }
+}
+
+// Güzergah görüntüleme stilleri
+.guzergah-container {
+  border-radius: var(--card-radius);
+  background-color: white;
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  
+  .direction-tabs {
+    border-bottom: 1px solid var(--border-color);
+    padding: 0 1rem;
+    background-color: white;
+    
+    .direction-nav {
+      border-bottom: none;
+      
+      .nav-link {
+        border: none;
+        border-radius: var(--card-radius);
+        padding: 1rem;
+        margin-right: 0.5rem;
+        color: var(--text-muted-color);
+        
+        &.active {
+          background-color: var(--primary-color) !important;
+          color: white;
+          border-bottom: 3px solid var(--primary-color);
+        }
+        
+        .direction-tab {
+          display: flex;
+          align-items: center;
+          
+          i {
+            margin-right: 0.5rem;
+          }
+          
+          .direction-badge {
+            margin-left: 0.5rem;
+            background-color: rgba(0,0,0,0.1);
+            color: var(--text-muted-color);
+            font-weight: normal;
+            border-radius: 20px;
+          }
+        }
+      }
+    }
+  }
+  
+  .guzergah-content {
+    padding: 1.5rem;
+    
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      background-color: #e9ecef;
+      border-radius: var(--card-radius);
+      
+      h5 {
+        margin: 0;
+        font-weight: 600;
+      }
+      
+      .title-with-counter {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        
+        .durak-counter {
+          display: flex;
+          align-items: center;
+          margin-top: 0.5rem;
+          padding: 0.25rem 0.75rem;
+          background-color: rgba(var(--primary-color), 0.1);
+          border-radius: 20px;
+          font-size: 0.85rem;
+          color: var(--primary-color);
+          font-weight: 500;
+          
+          i {
+            margin-right: 0.4rem;
+            font-size: 0.9rem;
+          }
+        }
+      }
+      
+      .direction-badge-map {
+        background-color: var(--primary-color) !important;
+        font-weight: 500;
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+        border-radius: 20px;
+      }
+    }
+    
+    .durak-list-container {
+      max-height: 500px;
+      overflow-y: auto;
+      border: 1px solid var(--border-color);
+      border-radius: var(--card-radius);
+      
+      .custom-list-group {
+        .custom-list-item {
+          border: none;
+          border-bottom: 1px solid var(--border-color);
+          padding: 0;
+          
+          &:last-child {
+            border-bottom: none;
+          }
+          
+          .durak-info {
+            padding: 0.75rem 1rem;
+            display: flex;
+            align-items: center;
+            
+            .durak-number {
+              background-color: var(--light-gray-bg);
+              color: var(--primary-color);
+              font-weight: 700;
+              border-radius: 50%;
+              width: 30px;
+              height: 30px;
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              margin-right: 1rem;
+            }
+            
+            .durak-details {
+              .durak-name {
+                font-weight: 500;
+              }
+              
+              .durak-desc {
+                font-size: 0.85rem;
+                color: var(--text-muted-color);
+                margin-top: 0.25rem;
+              }
+            }
+          }
+          
+          &:hover {
+            background-color: rgba(var(--primary-color), 0.05);
+          }
+          
+          &:active {
+            background-color: rgba(var(--primary-color), 0.1);
+          }
+        }
+      }
+      
+      .no-data {
+        padding: 2rem;
+        text-align: center;
+        color: var(--text-muted-color);
+        
+        i {
+          font-size: 2rem;
+          margin-bottom: 0.5rem;
+          display: block;
+        }
+      }
+    }
+    
+    .map-wrapper {
+      height: 550px;
+      border-radius: var(--card-radius);
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      
+      .custom-map {
+        height: 100%;
+        width: 100%;
+      }
+      
+      .custom-popup {
+        .popup-content {
+          .popup-header {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
+          }
+          
+          .popup-details {
+            font-size: 0.9rem;
+            
+            .popup-direction {
+              margin: 0.25rem 0;
+            }
+            
+            .popup-link {
+              display: inline-block;
+              margin-top: 0.5rem;
+              color: var(--primary-color);
+              text-decoration: none;
+              
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+      
+      .no-data {
+        padding: 3rem;
+        text-align: center;
+        color: var(--text-muted-color);
+        background-color: var(--light-gray-bg);
+        
+        i {
+          font-size: 3rem;
+          margin-bottom: 1rem;
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+// Saat bilgileri stilleri
+.schedule-container {
+  background-color: white;
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  
+  .schedule-tabs {
+    .direction-tabs {
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 1rem;
+      
+      .nav-link {
+        border: none;
+        padding: 1rem;
+        color: var(--text-muted-color);
+        
+        &.active {
+          color: var(--primary-color);
+          border-bottom: 3px solid var(--primary-color);
+        }
+        
+        .direction-tab-title {
+          display: flex;
+          align-items: center;
+          
+          i {
+            margin-right: 0.5rem;
+          }
+        }
+      }
+    }
+    
+    .schedule-content {
+      padding: 1rem 1.5rem;
+      
+      .schedule-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        padding: 0;
+        background: none;
+        
+        h5 {
+          margin: 0;
+          font-weight: 600;
+        }
+        
+        .print-button {
+          display: flex;
+          align-items: center;
+          
+          i {
+            margin-right: 0.5rem;
+          }
+        }
+      }
+      
+      .schedule-table-container {
+        .schedule-table {
+          border-radius: var(--card-radius);
+          overflow: hidden;
+          
+          thead {
+            background-color: white;
+            
+            th {
+              color: var(--text-color);
+              font-weight: 600;
+              padding: 0.75rem;
+              border-bottom: 2px solid var(--primary-color);
+              
+              &.column-sira {
+                width: 5%;
+                text-align: center;
+              }
+              
+              &.column-weekday,
+              &.column-saturday,
+              &.column-sunday {
+                width: 31.67%;
+                
+                i {
+                  margin-right: 0.5rem;
+                  color: var(--primary-color);
+                }
+              }
+            }
+          }
+          
+          tbody {
+            tr {
+              &:nth-child(odd) {
+                background-color: rgba(var(--light-gray-bg), 0.5);
+              }
+              
+              td {
+                padding: 0.75rem;
+                
+                &.has-time {
+                  font-weight: 500;
+                  color: var(--text-color);
+                }
+                
+                &.no-time {
+                  color: #aaa;
+                  text-align: center;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .schedule-notes {
+    margin-top: 2rem;
+    padding: 0 1.5rem 1.5rem;
+    
+    .notes-title {
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #eee;
+      font-weight: 500;
+      
+      i {
+        margin-right: 0.5rem;
+        color: var(--primary-color);
+      }
+    }
+    
+    .notes-table {
+      border-radius: var(--card-radius);
+      overflow: hidden;
+      
+      thead {
+        background-color: var(--primary-color);
+        
+        th {
+          color: white;
+          font-weight: 500;
+          padding: 0.75rem;
+          
+          &.column-color {
+            width: 15%;
+          }
+          
+          &.column-description {
+            width: 85%;
+          }
+        }
+      }
+      
+      tbody {
+        .color-cell {
+          vertical-align: middle;
+          text-align: center;
+          
+          .color-box {
+            width: 30px;
+            height: 30px;
+            margin: 0 auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+          }
+        }
+        
+        .description-cell {
+          padding: 0.75rem;
+        }
+      }
+    }
+  }
+}
+
+// Yazdırma butonu stilleri
+.print-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 30px;
+  padding: 0.5rem 1rem;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background-color: var(--text-muted-color);
+    color: white;
+  }
+  
+  i {
+    font-size: 1rem;
+  }
+}
+
+// Yazdırma için medya sorgusu
+@media print {
+  // Yazdırma sırasında gizlenecek elementler
+  body * {
+    visibility: hidden;
+  }
+  
+  // Yazdırma penceresinde görünecek içerik
+  .print-content,
+  .print-content * {
+    visibility: visible;
+  }
+  
+  // Yazdırma için özel stiller
+  .print-content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    
+    .hat-header {
+      box-shadow: none;
+      border: 1px solid #ddd;
+    }
+    
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      page-break-inside: avoid;
+      
+      th, td {
+        border: 1px solid #ddd;
+        padding: 6px;
+      }
+      
+      th {
+        background-color: #f8f9fa !important;
+        color: #333 !important;
+      }
+    }
+    
+    .schedule-notes {
+      page-break-inside: avoid;
+      margin-top: 20px;
+    }
+    
+    // Yazdırma sırasında gizlenecek butonlar
+    .print-button,
+    .back-button,
+    .search-container,
+    .modern-tabs {
+      display: none !important;
+    }
+    
+    // Yazdırma sırasında gösterilecek her iki yön
+    .tab-content > .tab-pane {
+      display: block !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    
+    // Sayfa kesme ayarları
+    .schedule-container {
+      page-break-after: always;
+    }
+  }
+}
+
+/* Mobil Uyumlu Stiller */
+@media (max-width: 768px) {
+  .hat-detay-container {
+    padding: 1rem;
+
+    .hat-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+      .hat-title {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+      .hat-number { font-size: 1.25rem; }
+      .hat-name { font-size: 1.5rem; }
+      .back-button {
+        width: 100%;
+      }
+    }
+
+    .guzergah-container {
+        .guzergah-content {
+            .col-md-4, .col-md-8 {
+                width: 100%;
+            }
+        }
+        .durak-list-container {
+            max-height: 40vh; // Mobil için yüksekliği ayarla
+        }
+        .map-wrapper {
+            height: 400px; // Mobil için harita yüksekliği
+        }
+    }
+    
+    .schedule-table-container {
+        font-size: 0.9rem;
+    }
+  }
+} 
